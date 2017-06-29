@@ -29,6 +29,7 @@ result = pd.concat(frames, axis=1, join='inner')
 result = result.reset_index()
 result['TERM_CODE'] = result['TERM_CODE'].astype('str')
 
+print(result)
 #Loop to change TERM_CODE to dates
 i = 0
 for x in result['TERM_CODE']:
@@ -46,11 +47,32 @@ for x in result['TERM_CODE']:
 
     date = year + '-' + month + '-' + day
     result.set_value(i, 'TERM_CODE', date)
+
+    y = i-1
+    if i != 0 and i<=len(result):
+        new_value = result.iloc[i, 3] - result.iloc[y, 3]
+        result.set_value(i, 'CREDITS_ATTEMPTED', new_value)
     i = i+1
 
 #Change TERM_CODE column to datetime values
 result['TERM_CODE'] = pd.to_datetime(result['TERM_CODE'])
-result = result.rename(columns={'TERM_CODE': 'DATE'})
+result = result.rename(columns={'TERM_CODE': 'DATE', 'CREDITS_ATTEMPTED': 'CHANGE_IN_CREDITS_ATTEMPTED', 'MAJOR_CODE_1': 'MAJOR'})
+
+result = result.set_index(['DATE'])
+
+majors = result['MAJOR'].unique().tolist()
+
+#Changing number of credits to change in credits
+#Not functional at the moment
+x=0
+for major in majors:
+    x=x+1
+    data = result.loc[result.MAJOR==major]
+    print(data)
+    for i in range(1, len(data)):
+        new_value = data.iloc[i, 2] - data.iloc[i-1, 2]
+        result.set_value(x, 'CHANGE_IN_CREDITS_ATTEMPTED', new_value)
+        x = x+1
 
 #Output aggregated attributes to CSV
 result.to_csv('CleanedData.csv')

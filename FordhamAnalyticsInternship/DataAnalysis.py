@@ -19,8 +19,10 @@ for major in majors:
     data = data.convert_objects(convert_numeric=True)
     print(data.dtypes)
 
-    data.plot(figsize=(15, 6))
+    data['CREDITS_ATTEMPTED'].plot(figsize=(15, 6))
+    plt.ylabel('Number of Credits for ' + major)
     plt.show()
+
 
     # Define the p, d and q parameters to take any value between 0 and 2
     p = d = q = range(0, 2)
