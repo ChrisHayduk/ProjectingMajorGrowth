@@ -8,19 +8,17 @@ from math import sqrt
 import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 
-CleanedData = pd.read_csv('CleanedData.csv', index_col=2, low_memory=False, parse_dates=['DATE']) #Change term code column to date time when possible
-del CleanedData['Unnamed: 0']
+CleanedData = pd.read_csv('CleanedData.csv', index_col=0, low_memory=False, parse_dates=['DATE']) #Change term code column to date time when possible
 
-majors = CleanedData['MAJOR_CODE_1'].unique().tolist()
+majors = CleanedData['MAJOR'].unique().tolist()
 
 for major in majors:
-    data = CleanedData.loc[CleanedData.MAJOR_CODE_1==major]
-
+    data = CleanedData.loc[CleanedData.MAJOR==major]
     data = data.convert_objects(convert_numeric=True)
     print(data.dtypes)
 
-    data['CREDITS_ATTEMPTED'].plot(figsize=(15, 6))
-    plt.ylabel('Number of Credits for ' + major)
+    data['CHANGE_IN_CREDITS_ATTEMPTED'].plot(figsize=(15, 6))
+    plt.ylabel('Change in Credits for ' + major)
     plt.show()
 
 
@@ -35,7 +33,7 @@ for major in majors:
 
     for param in pdq:
         try:
-            mod = ARIMA(data['CREDITS_ATTEMPTED'], order=param)
+            mod = ARIMA(data['CHANGE_IN_CREDITS_ATTEMPTED'], order=param)
 
             results = mod.fit(disp=0)
 
@@ -43,13 +41,16 @@ for major in majors:
         except:
             continue
 
-    mod = ARIMA(data['CREDITS_ATTEMPTED'], order=(0, 1, 1))
+    mod = ARIMA(data['CHANGE_IN_CREDITS_ATTEMPTED'], order=(0, 1, 1))
 
     results = mod.fit(disp=0)
 
     print(results.summary().tables[1])
 
-    pred = mod.predict(params=(0.0,1.0,1.0), start=pd.to_datetime('2014-05-15'), end=18, dynamic=False)
+    start = len(data)//2
+    end = len(data)
+
+    pred = mod.predict(params=(0.0,1.0,1.0), start=start, end=end, dynamic=False)
     print(pred)
     #ax = data['2007':].plot(label='observed')
     plt.plot(pred)

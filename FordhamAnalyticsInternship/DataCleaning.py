@@ -48,17 +48,13 @@ for x in result['TERM_CODE']:
     date = year + '-' + month + '-' + day
     result.set_value(i, 'TERM_CODE', date)
 
-    y = i-1
-    if i != 0 and i<=len(result):
-        new_value = result.iloc[i, 3] - result.iloc[y, 3]
-        result.set_value(i, 'CREDITS_ATTEMPTED', new_value)
-    i = i+1
+    i=i+1
 
 #Change TERM_CODE column to datetime values
 result['TERM_CODE'] = pd.to_datetime(result['TERM_CODE'])
 result = result.rename(columns={'TERM_CODE': 'DATE', 'CREDITS_ATTEMPTED': 'CHANGE_IN_CREDITS_ATTEMPTED', 'MAJOR_CODE_1': 'MAJOR'})
 
-result = result.set_index(['DATE'])
+print(result)
 
 majors = result['MAJOR'].unique().tolist()
 
@@ -70,9 +66,11 @@ for major in majors:
     data = result.loc[result.MAJOR==major]
     print(data)
     for i in range(1, len(data)):
-        new_value = data.iloc[i, 2] - data.iloc[i-1, 2]
+        new_value = data.iloc[i, 3] - data.iloc[i-1, 3]
         result.set_value(x, 'CHANGE_IN_CREDITS_ATTEMPTED', new_value)
         x = x+1
+
+result = result.set_index(['DATE'])
 
 #Output aggregated attributes to CSV
 result.to_csv('CleanedData.csv')
