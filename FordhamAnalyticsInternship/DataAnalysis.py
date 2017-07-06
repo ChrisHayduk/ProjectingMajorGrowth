@@ -31,6 +31,9 @@ for major in majors:
 
     warnings.filterwarnings("ignore") # specify to ignore warning messages
 
+    start = len(data)//2
+    end = len(data)
+
     for param in pdq:
         try:
             mod = ARIMA(data['CHANGE_IN_CREDITS_ATTEMPTED'], order=param)
@@ -47,10 +50,7 @@ for major in majors:
 
     print(results.summary().tables[1])
 
-    start = len(data)//2
-    end = len(data)
-
-    pred = mod.predict(params=(0.0,1.0,1.0), start=start, end=end, dynamic=False)
+    pred = mod.predict(params=(0.0,1.0,1.0), dynamic=False)
     print(pred)
     #ax = data['2007':].plot(label='observed')
     plt.plot(pred)
