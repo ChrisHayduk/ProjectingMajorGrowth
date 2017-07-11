@@ -14,9 +14,9 @@ CleanedData = pd.read_csv('CleanedData.csv', index_col=0, low_memory=False, pars
 majors = CleanedData['MAJOR'].unique().tolist()
 
 for major in majors:
-    data = CleanedData.loc[CleanedData.MAJOR==major]
-    data = data.convert_objects(convert_numeric=True)
-    print(data.dtypes)
+    df1 = CleanedData.loc[CleanedData.MAJOR==major]
+    df1 = df1.convert_objects(convert_numeric=True)
+    data = df1.ix[1:]   #Drops first row of data (can't derive change in credits with no previous data)
 
     if(len(data)>=5):
         directory = '/home/chris/Desktop/ProjectingMajorGrowth/FordhamAnalyticsInternship/Plots/' + major
@@ -26,7 +26,7 @@ for major in majors:
         data['CHANGE_IN_CREDITS_ATTEMPTED'].plot(figsize=(15, 6))
         plt.ylabel('Change in Credits for ' + major)
         plt.savefig(directory + '/' + major + '_data.png')
-
+        plt.close()
 
         # Define the p, d and q parameters to take any value between 0 and 2
         p = d = q = range(0, 2)
@@ -68,7 +68,9 @@ for major in majors:
 
             #print(results.summary().tables[1])
 
-            results.plot_predict(start=start, end=end, dynamic=True, plot_insample=True)
+            results.plot_predict(start=start, end=end+5, dynamic=True, plot_insample=True)
             plt.savefig(directory + '/' + major + '_projection.png')
+            plt.close()
+
         except:
             pass
