@@ -64,7 +64,6 @@ x=0
 for major in majors:
     x=x+1
     data = result.loc[result.MAJOR==major]
-    print(data)
     for i in range(1, len(data)):
         new_value = data.iloc[i, 3] - data.iloc[i-1, 3]
         result.set_value(x, 'CHANGE_IN_CREDITS_ATTEMPTED', new_value)

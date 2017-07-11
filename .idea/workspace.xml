@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FordhamAnalyticsInternship/DataAnalysis.py" afterPath="$PROJECT_DIR$/FordhamAnalyticsInternship/DataAnalysis.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FordhamAnalyticsInternship/DataCleaning.py" afterPath="$PROJECT_DIR$/FordhamAnalyticsInternship/DataCleaning.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DataAnalysis.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataAnalysis.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataAnalysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="53" column="15" lean-forward="true" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
+            <state relative-caret-position="300">
+              <caret line="73" column="16" lean-forward="false" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -31,11 +32,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CleanedData.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/CleanedData.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DataCleaning.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataCleaning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="70" column="15" lean-forward="false" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
+            <state relative-caret-position="45">
+              <caret line="5" column="78" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -76,6 +87,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -104,11 +116,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.DataAnalysis">
     <configuration default="false" name="DataCleaning" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -310,10 +322,10 @@
     <frame x="65" y="24" width="1301" height="647" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19796558" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19561815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2635253" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36823735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -350,6 +362,86 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataAnalysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/CleanedData.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataCleaning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="5" column="78" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataAnalysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataCleaning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataAnalysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataCleaning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="70" column="15" lean-forward="false" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataAnalysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataCleaning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" column="15" lean-forward="false" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataAnalysis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -408,7 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -495,29 +586,36 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataCleaning.py">
+    <entry file="file:///usr/local/lib/python3.5/dist-packages/statsmodels/tsa/arima_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="70" column="15" lean-forward="false" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="135">
+          <caret line="1011" column="18" lean-forward="true" selection-start-line="1011" selection-start-column="18" selection-end-line="1011" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/CleanedData.csv">
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataCleaning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        <state relative-caret-position="45">
+          <caret line="5" column="78" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/DataAnalysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="53" column="15" lean-forward="true" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
+        <state relative-caret-position="300">
+          <caret line="73" column="16" lean-forward="false" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FordhamAnalyticsInternship/CleanedData.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
