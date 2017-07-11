@@ -1,3 +1,8 @@
+'''
+    Program to format data for use with ARIMA model
+    Returns data grouped by major and term. Data includes number of students majoring in subject and change in number of credits taken
+'''
+
 import pandas as pd
 import glob
 import os
