@@ -1,6 +1,7 @@
 # Ignore Data #
 FordhamAnalyticsInternship/RegistrationDatawithEncryptedID-20Years/
 FordhamAnalyticsInternship/CleanedData.csv
+FordhamAnalyticsInternship/.idea/
 
 # Compiled source #
 ###################
