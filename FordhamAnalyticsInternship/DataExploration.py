@@ -16,3 +16,28 @@ all_files = glob.glob(os.path.join(path, "*.csv"))
 #Load and aggregate data files
 df_from_each_file = (pd.read_csv(f, low_memory=False) for f in all_files)
 concatenated_df = pd.concat(df_from_each_file, ignore_index=True)
+
+number_of_credits = concatenated_df.groupby(['MAJOR_CODE_1', 'ADMIT_TERM', 'TERM_CODE'])['CREDITS_ATTEMPTED'].sum()
+
+concatenated_df.drop_duplicates(subset=['UNIQUE_ID','TERM_CODE'], inplace = True)
+number_of_majors = concatenated_df.groupby(['MAJOR_CODE_1', 'ADMIT_TERM', 'TERM_CODE'])['MAJOR_CODE_1'].count() #Gets number of students majoring in each
+
+#Convert new attributes to pandas dataframes
+number_of_majors = number_of_majors.to_frame()
+number_of_credits = number_of_credits.to_frame()
+
+number_of_majors.columns = ['NUM_STUDENTS']
+
+#Concatenate new dataframes
+frames = [number_of_majors, number_of_credits]
+
+result = pd.concat(frames, axis=1, join='inner')
+result = result.reset_index()
+
+print(result)
+
+for i in range(len(result)):
+    new_value = result['CREDITS_ATTEMPTED'].iloc[i] / result['NUM_STUDENTS'].iloc[i]
+    result.set_value(result[i], 'CREDITS_ATTEMPTED', new_value)
+
+print(result)
