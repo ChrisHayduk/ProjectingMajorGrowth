@@ -37,7 +37,14 @@ result = result.reset_index()
 print(result)
 
 for i in range(len(result)):
-    new_value = result['CREDITS_ATTEMPTED'].iloc[i] / result['NUM_STUDENTS'].iloc[i]
-    result.set_value(result[i], 'CREDITS_ATTEMPTED', new_value)
+    new_value = result.loc[i, 'CREDITS_ATTEMPTED'] / result.loc[i, 'NUM_STUDENTS']
+    result.set_value(i, 'CREDITS_ATTEMPTED', new_value)
 
-print(result)
+result = result.rename(columns={'CREDITS_ATTEMPTED': 'CREDITS_ATTEMPTED_PER_STUDENT', 'MAJOR_CODE_1': 'MAJOR'})
+
+#result = result.set_index(['MAJOR'])
+
+df1 = result.loc[result.MAJOR=='CHEM']
+df1['CREDITS_ATTEMPTED_PER_STUDENT'].plot(figsize=(15, 6))
+plt.ylabel('Credits Per Student for CHEM')
+plt.show()
