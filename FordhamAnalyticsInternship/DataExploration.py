@@ -17,8 +17,28 @@ all_files = glob.glob(os.path.join(path, "*.csv"))
 df_from_each_file = (pd.read_csv(f, low_memory=False) for f in all_files)
 concatenated_df = pd.concat(df_from_each_file, ignore_index=True)
 
-number_of_credits = concatenated_df.groupby(['MAJOR_CODE_1', 'ADMIT_TERM', 'TERM_CODE'])['CREDITS_ATTEMPTED'].sum()
+df = concatenated_df.groupby(['SCHOOL', 'MAJOR_CODE_1', 'ADMIT_TERM', 'TERM_CODE'])['UNIQUE_ID'].nunique()
 
+print(df)
+
+all_admit_terms = concatenated_df.drop_duplicates(subset=['ADMIT_TERM'], inplace = False)
+all_admit_terms.sort_values(['ADMIT_TERM'], ascending=True, inplace=True)
+
+admit_terms = []
+
+i = 1
+for admit_term in all_admit_terms['ADMIT_TERM']:
+    admit_terms.append([admit_term, i])
+    i = i+1
+
+admit_terms= pd.DataFrame(admit_terms)
+
+df = pd.DataFrame(df)
+
+df.join(admit_terms)
+
+print(df)
+'''
 concatenated_df.drop_duplicates(subset=['UNIQUE_ID','TERM_CODE'], inplace = True)
 number_of_majors = concatenated_df.groupby(['MAJOR_CODE_1', 'ADMIT_TERM', 'TERM_CODE'])['MAJOR_CODE_1'].count() #Gets number of students majoring in each
 
@@ -48,3 +68,4 @@ df1 = result.loc[result.MAJOR=='CHEM']
 df1['CREDITS_ATTEMPTED_PER_STUDENT'].plot(figsize=(15, 6))
 plt.ylabel('Credits Per Student for CHEM')
 plt.show()
+'''
