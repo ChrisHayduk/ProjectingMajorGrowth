@@ -28,7 +28,7 @@ for major in majors:
 
     #Only analyze data if there are at least 5 data points
     if(len(data)>=5):
-        directory = '/home/chris/Desktop/ProjectingMajorGrowth/FordhamAnalyticsInternship/Plots/' + major
+        directory = '/home/chris/Desktop/ProjectingMajorGrowth/FordhamAnalyticsInternship/Plots/ARIMA/' + major
         if not os.path.exists(directory):
             os.makedirs(directory)
 

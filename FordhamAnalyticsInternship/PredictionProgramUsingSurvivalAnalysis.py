@@ -9,6 +9,8 @@ import os
 import matplotlib.pyplot as plt
 plt.style.use('fivethirtyeight')
 
+directory = '/home/chris/Desktop/ProjectingMajorGrowth/FordhamAnalyticsInternship/Plots/SurvivalAnalysis'
+
 #Load grouped data
 data = pd.read_excel('Fall1997toSummer2017withGroupings-Major1Only.xlsx')
 
@@ -70,12 +72,27 @@ for school in schools:
             for j in range(len(df1)):
                 if df1.iloc[j,11] == i:
                     studentsInTerm = studentsInTerm+1
-                    if df1.iloc[j, 6] == major:
+                    if df1.iloc[j, 7] == major:
+                        major_code = df1.iloc[j, 6]
                         studentsInMajor = studentsInMajor+1
 
-            listOfProportions[i-1] = studentsInMajor/studentsInTerm
+            if studentsInTerm != 0:
+                listOfProportions[i-1] = studentsInMajor/studentsInTerm
             totalStudents[i-1] = studentsInTerm
 
+#Commented out this section of the code because the graphs have already been created
+'''
+        final_directory = directory + '/' + major_code + '/'
+
+        if not os.path.exists(final_directory):
+            os.makedirs(final_directory)
+
+        plt.plot(listOfProportions)
+        plt.ylabel('Proportion for ' + major)
+        plt.xlabel('Relative Term')
+        plt.savefig(final_directory + major_code + '_data.png')
+        plt.close()
+'''
         input_str = "Enter number of students in each relative term (ie. first term, second term, etc.) for school ", school, " separated by spaces: "
         rawInput = input(input_str)
         userInput = rawInput.split(' ')
